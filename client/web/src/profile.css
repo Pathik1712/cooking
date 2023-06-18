@@ -1,0 +1,238 @@
+.profile {
+  height: 100vh;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  user-select: none;
+}
+.recepies {
+  inset: 0;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  overflow: hidden;
+  border-right: 1px solid black;
+}
+.general {
+  display: grid;
+  position: sticky;
+  top: 0;
+  grid-template-rows: 50vh 40vh 10vh;
+}
+.chart {
+  inset: 0;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
+  border-bottom: 1.5px solid black;
+}
+.number {
+  width: 80%;
+  height: 40vw;
+  max-width: 320px;
+  max-height: 320px;
+  background-color: transparent;
+  border-radius: 50%;
+  position: relative;
+  overflow: hidden;
+}
+.number::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  inset: 10px;
+  background-color: white;
+  border-radius: inherit;
+}
+.number::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  inset: 0;
+  background-image: radial-gradient(white, #1ec8ff, #1e90ff, #1e58ff);
+  border-radius: inherit;
+  animation: pulse 2s infinite alternate;
+  z-index: -1;
+}
+.number > span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #1e90ff;
+  z-index: 1;
+  font-size: 400%;
+}
+@keyframes pulse {
+  from {
+    transform: scale(100%);
+  }
+  to {
+    transform: scale(350%);
+  }
+}
+.logout {
+  background-color: dodgerblue;
+  align-self: center;
+  justify-self: center;
+  height: 2rem;
+  width: 5rem;
+  border: none;
+  border-radius: 7px;
+  color: white;
+  font-weight: bolder;
+  font-size: medium;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+@media (pointer: fine) {
+  .logout:hover {
+    transform: scale(120%);
+  }
+  .profile-btn > button:hover {
+    background-color: crimson;
+  }
+}
+.social_med {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  inset: 0;
+  border-bottom: 1.5px solid black;
+}
+.social_med > li {
+  list-style: none;
+  width: 100%;
+  height: 3rem;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 2px 2px 5px rgb(97, 97, 97);
+}
+.button_wrap {
+  position: relative;
+  height: 1rem;
+  width: 2.3rem;
+  margin-right: 1rem;
+  background-color: gray;
+  border-radius: 20px;
+  z-index: 0;
+}
+.button_wrap > input {
+  inset: 0;
+  opacity: 0;
+  position: absolute;
+  z-index: 2;
+}
+.button_wrap > label {
+  position: absolute;
+  z-index: 1;
+  height: 1.2rem;
+  width: 1.2rem;
+  background-image: radial-gradient(gray 45%, white 25%);
+  top: 50%;
+  left: 0;
+  border-radius: 50%;
+  transform: translate(0, -50%);
+  box-shadow: 0 0 3px black;
+  transition: all 0.4s;
+}
+.button_wrap > input:checked + label {
+  transform: translate(-100%, -50%);
+  background-image: radial-gradient(white 100%, transparent 0%);
+  left: 100%;
+}
+.button_wrap:has(input:checked) {
+  background-color: dodgerblue;
+}
+.user-name {
+  display: inline;
+  width: min-content;
+  text-align: center;
+  border: none;
+  font-size: medium;
+  font-weight: 600;
+  outline: none;
+}
+.handler {
+  position: relative;
+  display: flex;
+  margin-right: 0.8rem;
+  height: 100%;
+  align-items: center;
+}
+.recepies > h1 {
+  border-bottom: 1px solid #000;
+  padding: 2px;
+}
+.recepies > .r-contain {
+  overflow-y: scroll;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+.profile-btn {
+  display: flex;
+  gap: 10px;
+}
+.war-text {
+  text-decoration: none;
+  margin: auto;
+  text-transform: capitalize;
+  font-size: clamp(40px, 3rem, 8vw);
+  color: rgb(123, 123, 123);
+}
+.handler > button > svg {
+  fill: transparent;
+  stroke: dodgerblue;
+  height: 2rem;
+  width: 2rem;
+}
+.handler > button {
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  height: 2rem;
+  width: 2rem;
+}
+.logo {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+.logo > svg {
+  margin-left: 15px;
+}
+
+@media (max-width: 630px) {
+  .profile {
+    grid-template-columns: auto;
+    grid-template-rows: 30rem 1fr;
+  }
+  .recepies > h1 {
+    border: none;
+    text-decoration: underline 3px solid dodgerblue;
+  }
+  .number {
+    height: 200px;
+    width: 200px;
+  }
+  .general {
+    border-top: 1px solid black;
+  }
+  .recepies > .r-contain {
+    display: flex;
+    overflow-x: scroll;
+    flex-wrap: wrap;
+    margin-bottom: 0;
+    padding-left: 4rem;
+    padding-right: 4rem;
+    scroll-snap-type: x mandatory;
+  }
+  .chart_title {
+    text-decoration: underline 3px solid dodgerblue;
+  }
+}

@@ -1,0 +1,126 @@
+.add_nav {
+  display: flex;
+  position: sticky;
+  top: 0;
+  align-items: center;
+  justify-content: center;
+  background-color: salmon;
+}
+.add_wrap {
+  position: relative;
+  margin: 0 15%;
+  display: flex;
+  flex-direction: column;
+}
+.add_wrap > .add_input {
+  border: none;
+  border-bottom: 2px solid black;
+  border-left: 2px solid black;
+  background-color: transparent;
+  width: 100%;
+  backdrop-filter: blur(5px);
+  font-weight: 700;
+  padding: 0.4rem;
+  outline: none;
+}
+.add_wrap > label {
+  background-color: transparent;
+  position: absolute;
+  left: 5%;
+  transition: all 0.5s;
+}
+.add_wrap > .add_input:focus ~ label {
+  transform: translateY(-70%) scale(80%);
+  color: salmon;
+}
+.add_wrap > .add_input:focus {
+  border-color: salmon;
+}
+
+.add_wrap > .add_input:not(:placeholder-shown) ~ label {
+  transform: translateY(-70%) scale(80%);
+}
+.add {
+  user-select: none;
+  min-height: 100vh;
+  max-width: 100vw;
+  display: grid;
+  grid-template-rows: 4rem 1fr;
+  overflow: hidden;
+}
+.add_form {
+  margin-top: 1rem;
+  position: relative;
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  justify-content: space-around;
+}
+.add_nav > a {
+  position: absolute;
+  right: 0;
+  border: none;
+  display: flex;
+  align-items: center;
+  transform: translateX(-50%);
+}
+.add_nav > h1 {
+  font-size: clamp(2rem, 6vw, 3.5rem);
+  color: white;
+  text-transform: uppercase;
+}
+.add_nav > a > svg {
+  fill: white;
+  height: 2rem;
+  width: 2rem;
+}
+
+.svg1 {
+  top: 0;
+  left: 0;
+  position: absolute;
+  height: 8rem;
+  transition: all 16s linear;
+}
+.add_btn {
+  margin: 0 auto;
+  margin-top: 0.8rem;
+  width: 5rem;
+  background-color: salmon;
+  border: none;
+  height: 2rem;
+  color: whitesmoke;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 1.2rem;
+}
+.ing {
+  margin: 0 15%;
+}
+.ing > .add_wrap {
+  margin: 1rem 0;
+}
+.add_ing {
+  text-transform: capitalize;
+  list-style: none;
+  background-color: salmon;
+  color: white;
+  width: 50%;
+  padding: 0.4rem;
+  margin: 0.5rem 0;
+  position: relative;
+  text-align: center;
+  border-radius: 10px;
+}
+.ing > ul {
+  position: relative;
+}
+.ing > ul::before {
+  content: "";
+  background-color: salmon;
+  position: absolute;
+  height: 100%;
+  width: 0.5rem;
+  left: 2rem;
+}
