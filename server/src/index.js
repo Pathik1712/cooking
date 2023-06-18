@@ -4,6 +4,7 @@ import { userrouter } from "./route/user.js"
 import { recepiesrouter } from "./route/recipies.js"
 import cors from "cors"
 const app = express()
+const port = process.env.PORT || 3001
 app.use(cors())
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
@@ -12,6 +13,6 @@ app.use("/recepies", recepiesrouter)
 mongoose.connect(
   "mongodb+srv://pathik2003:4zmNOyXsoKXYn4KZ@cluster0.dn2rrqx.mongodb.net/"
 )
-app.listen(3001, () => {
+app.listen(port, () => {
   console.log("server started")
 })
