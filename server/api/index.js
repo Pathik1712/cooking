@@ -17,3 +17,4 @@ mongoose.connect(connectString)
 app.listen(port, () => {
   console.log("server started")
 })
+module.exports=app;
