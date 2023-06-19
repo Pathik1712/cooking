@@ -4,6 +4,9 @@
   "description": "",
   "main": "index.js",
   "type": "module",
+  "engines": {
+    "node": "18.x"
+  },
   "dependencies": {
     "abbrev": "^1.1.1",
     "accepts": "^1.3.8",
@@ -13,7 +16,7 @@
     "are-we-there-yet": "^2.0.0",
     "array-flatten": "^1.1.1",
     "balanced-match": "^1.0.2",
-    "bcryptjs": "^2.4.3",
+    "bcrypt": "^5.1.0",
     "body-parser": "^1.20.1",
     "brace-expansion": "^1.1.11",
     "bson": "^5.3.0",
@@ -34,7 +37,6 @@
     "depd": "^2.0.0",
     "destroy": "^1.2.0",
     "detect-libc": "^2.0.1",
-    "dotenv": "^16.3.1",
     "ecdsa-sig-formatter": "^1.0.11",
     "ee-first": "^1.1.1",
     "emoji-regex": "^8.0.0",
@@ -89,7 +91,6 @@
     "negotiator": "^0.6.3",
     "node-addon-api": "^5.1.0",
     "node-fetch": "^2.6.11",
-    "nodemon": "^2.0.22",
     "nopt": "^5.0.0",
     "npmlog": "^5.0.1",
     "object-assign": "^4.1.1",
@@ -121,8 +122,8 @@
     "socks": "^2.7.1",
     "sparse-bitfield": "^3.0.3",
     "statuses": "^2.0.1",
-    "string_decoder": "^1.3.0",
     "string-width": "^4.2.3",
+    "string_decoder": "^1.3.0",
     "strip-ansi": "^6.0.1",
     "tar": "^6.1.14",
     "toidentifier": "^1.0.1",
@@ -138,9 +139,10 @@
     "wrappy": "^1.0.2",
     "yallist": "^4.0.0"
   },
+  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon ./src/index.js"
+    "start": "nodemon src/index.js"
   },
   "author": "",
   "license": "ISC"
