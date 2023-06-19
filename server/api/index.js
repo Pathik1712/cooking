@@ -2,7 +2,6 @@ import express from "express"
 import mongoose from "mongoose"
 import { userrouter } from "./route/user.js"
 import { recepiesrouter } from "./route/recipies.js"
-import dotenv from "dotenv"
 import cors from "cors"
 
 dotenv.config()
