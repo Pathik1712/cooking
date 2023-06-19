@@ -13,7 +13,9 @@ app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 app.use("/", userrouter)
 app.use("/recepies", recepiesrouter)
-const connectString = process.env.DATABASE_URL
+const connectString =
+  process.env.DATABASE_URL ||
+  "mongodb+srv://pathik2003:t8ydab4BSZQyuAUf@cluster0.dn2rrqx.mongodb.net/"
 mongoose.connect(connectString)
 app.listen(port, () => {
   console.log("server started")
