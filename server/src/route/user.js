@@ -1,8 +1,8 @@
 import express from "express"
 import jwt from "jsonwebtoken"
-import bcrypt from "bcrypt"
 import { userdata } from "../user/user.js"
 import { recepiesmodel } from "../user/recepies.js"
+import bcrypt from "bcryptjs"
 const router = express.Router()
 router.post("/register", async (req, res) => {
   const { username, password } = req.body
