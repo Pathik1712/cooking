@@ -7,14 +7,13 @@ import cors from "cors"
 
 dotenv.config()
 const app = express()
-const port = process.env.PORT || 3001
+const port = 3001
 app.use(cors())
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 app.use("/", userrouter)
 app.use("/recepies", recepiesrouter)
 const connectString =
-  process.env.DATABASE_URL ||
   "mongodb+srv://pathik2003:t8ydab4BSZQyuAUf@cluster0.dn2rrqx.mongodb.net/"
 mongoose.connect(connectString)
 app.listen(port, () => {
