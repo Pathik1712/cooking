@@ -116,8 +116,9 @@
 .r-contain {
   width: 100%;
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
   align-items: center;
+  justify-content: center;
   gap: 3rem;
 }
 .r-banner {
