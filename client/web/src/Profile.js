@@ -320,13 +320,10 @@ const Profile = () => {
                       }
                       update[n][0] = true
                       update[n][1] = val
-                      await axios.put(
-                        "https://friendly-drawers-ox.cyclic.app/",
-                        {
-                          uid: getcooki("uid"),
-                          social_media: update,
-                        }
-                      )
+                      await axios.put("https://localhost:3001/", {
+                        uid: getcooki("uid"),
+                        social_media: update,
+                      })
                       document.getElementById(i).checked = true
                       let t = {
                         insta: update[0],
