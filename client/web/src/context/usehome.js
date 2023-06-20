@@ -14,7 +14,7 @@ export const Dataprovider = ({ children }) => {
   const [media, setmedia] = useState(window.localStorage.getItem("media"))
   useEffect(() => {
     const set = async () => {
-      let temp = await axios.get("http://localhost:3001/recepies")
+      let temp = await axios.get("https://rich-lime-reindeer-fez.cyclic.cloud/recepies")
       let data = temp.data
       setrec(data)
     }

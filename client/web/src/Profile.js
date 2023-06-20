@@ -13,7 +13,7 @@ const Profile = () => {
     const d = async () => {
       try {
         let temp = await axios.post(
-          "http://localhost:3001/recepies/user",
+          "https://rich-lime-reindeer-fez.cyclic.cloud/recepies/user",
           {
             uid: getcooki("uid"),
           },
@@ -36,6 +36,7 @@ const Profile = () => {
   for (let i in temp) {
     update.push([temp[i][0], temp[i][1]])
   }
+
   return (
     <main className='profile'>
       <div className='recepies'>
@@ -73,9 +74,12 @@ const Profile = () => {
                     style={{ cursor: "pointer" }}
                     onClick={async (e) => {
                       e.target.disabled = true
-                      await axios.delete("http://localhost:3001/recepies/", {
-                        id: i._id,
-                      })
+                      await axios.delete(
+                        "https://friendly-drawers-ox.cyclic.app/recepies/",
+                        {
+                          id: i._id,
+                        }
+                      )
                       let del = res.filter((item) => i._id !== item._id)
                       setres(del)
                       e.target.disabled = false
@@ -282,10 +286,13 @@ const Profile = () => {
                         return
                       }
                       update[n][0] = `${e.target.checked}`
-                      await axios.put("http://localhost:3001/", {
-                        uid: getcooki("uid"),
-                        social_media: update,
-                      })
+                      await axios.put(
+                        "https://friendly-drawers-ox.cyclic.app/",
+                        {
+                          uid: getcooki("uid"),
+                          social_media: update,
+                        }
+                      )
                       let t = {
                         insta: update[0],
                         youtube: update[1],
@@ -309,7 +316,7 @@ const Profile = () => {
                     }
                     update[n][0] = true
                     update[n][1] = val
-                    await axios.put("http://localhost:3001/", {
+                    await axios.put("https://friendly-drawers-ox.cyclic.app/", {
                       uid: getcooki("uid"),
                       social_media: update,
                     })
