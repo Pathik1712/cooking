@@ -2,6 +2,7 @@
   min-height: 100vh;
   width: 100%;
   font-family: "monospace";
+  overflow: hidden;
 }
 .zoom_img {
   height: auto;
@@ -245,4 +246,14 @@ ul > .zoom_ing {
     margin-left: 10vw;
     margin-right: 10vw;
   }
+}
+
+@media (max-width: 350px){
+  ul > .zoom_ing{
+    width: 17rem;
+  }
+  .zoom_i {
+    margin: 4.5rem 0;}
+  zoom_title {
+    margin-top: 4rem;}
 }
