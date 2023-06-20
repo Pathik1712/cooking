@@ -248,12 +248,12 @@ ul > .zoom_ing {
   }
 }
 
-@media (max-width: 350px){
+@media (max-width: 425px){
   ul > .zoom_ing{
     width: 17rem;
   }
   .zoom_i {
-    margin: 4.5rem 0;}
+        margin: 2.5rem 0 2.5rem 50vw;}
   .zoom_title {
     margin-top: 4rem;}
   .zoom > article {
