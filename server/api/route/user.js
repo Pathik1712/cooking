@@ -40,6 +40,7 @@ router.post("/login", async (req, res) => {
   res.json({ token, uid: user._id, media: user.social_media })
 })
 router.put("/", async (req, res) => {
+  console.log(uid,social_media)
   const { uid, social_media } = req.body
   res.json(social_media)
   let temp = {
