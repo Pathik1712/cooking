@@ -3,10 +3,7 @@ import mongoose from "mongoose"
 import { userrouter } from "./route/user.js"
 import { recepiesrouter } from "./route/recipies.js"
 import cors from "cors"
-<<<<<<< HEAD
-=======
 
->>>>>>> 6b074ea (s)
 const app = express()
 const port = 3001
 app.use(cors())
