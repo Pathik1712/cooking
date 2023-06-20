@@ -277,15 +277,49 @@ const Profile = () => {
                     type='checkbox'
                     defaultChecked={update[n][0] === "true" ? true : false}
                     id={i}
-                    onChange={async (e) => {
+                    onChange={(e) => {
+                      const func = async () => {
+                        e.target.disabled = true
+                        if (update[n][1] === null) {
+                          alert("user name required of platform")
+                          document.getElementById(i).checked = false
+                          e.target.disabled = false
+                          return
+                        }
+                        update[n][0] = `${e.target.checked}`
+                        await axios.put(
+                          "https://friendly-drawers-ox.cyclic.app/",
+                          {
+                            uid: getcooki("uid"),
+                            social_media: update,
+                          }
+                        )
+                        let t = {
+                          insta: update[0],
+                          youtube: update[1],
+                          twitter: update[2],
+                          facebook: update[3],
+                        }
+                        setmedia(JSON.stringify(t))
+                        window.localStorage.setItem("media", JSON.stringify(t))
+                        e.target.disabled = false
+                      }
+                      func()
+                    }}
+                  />
+                  <label htmlFor={i}></label>
+                </div>
+                <button
+                  onClick={(e) => {
+                    const func = async () => {
                       e.target.disabled = true
-                      if (update[n][1] === null) {
-                        alert("user name required of platform")
-                        document.getElementById(i).checked = false
+                      if (val === "") {
+                        alert("you didn't change anything")
                         e.target.disabled = false
                         return
                       }
-                      update[n][0] = `${e.target.checked}`
+                      update[n][0] = true
+                      update[n][1] = val
                       await axios.put(
                         "https://friendly-drawers-ox.cyclic.app/",
                         {
@@ -293,6 +327,7 @@ const Profile = () => {
                           social_media: update,
                         }
                       )
+                      document.getElementById(i).checked = true
                       let t = {
                         insta: update[0],
                         youtube: update[1],
@@ -301,38 +336,11 @@ const Profile = () => {
                       }
                       setmedia(JSON.stringify(t))
                       window.localStorage.setItem("media", JSON.stringify(t))
+                      setval("")
+                      alert("change saved")
                       e.target.disabled = false
-                    }}
-                  />
-                  <label htmlFor={i}></label>
-                </div>
-                <button
-                  onClick={async (e) => {
-                    e.target.disabled = true
-                    if (val === "") {
-                      alert("you didn't change anything")
-                      e.target.disabled = false
-                      return
                     }
-                    update[n][0] = true
-                    update[n][1] = val
-                    await axios.put("https://friendly-drawers-ox.cyclic.app/", {
-                      uid: getcooki("uid"),
-                      social_media: update,
-                    })
-                    console.log(document.getElementById(i))
-                    document.getElementById(i).checked = true
-                    let t = {
-                      insta: update[0],
-                      youtube: update[1],
-                      twitter: update[2],
-                      facebook: update[3],
-                    }
-                    setmedia(JSON.stringify(t))
-                    window.localStorage.setItem("media", JSON.stringify(t))
-                    setval("")
-                    alert("change saved")
-                    e.target.disabled = false
+                    func()
                   }}
                 >
                   <svg
