@@ -41,7 +41,7 @@ const Add = () => {
       owner: getcooki("uid"),
       social_media: dataq,
     }
-    await axios.post("http://localhost:3001/recepies/add", method, {
+    await axios.post("https://friendly-drawers-ox.cyclic.app/recepies/add", method, {
       headers: { auth: getcooki("token") },
     })
     let t = [...rec_obj, method]
