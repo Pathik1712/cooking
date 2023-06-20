@@ -13,7 +13,7 @@ const Profile = () => {
     const d = async () => {
       try {
         let temp = await axios.post(
-          "http://localhost:3001/recepies/user",
+          "https://friendly-drawers-ox.cyclic.app/recepies/user",
           {
             uid: getcooki("uid"),
           },
@@ -73,7 +73,7 @@ const Profile = () => {
                     style={{ cursor: "pointer" }}
                     onClick={async (e) => {
                       e.target.disabled = true
-                      await axios.delete("http://localhost:3001/recepies/", {
+                      await axios.delete("https://friendly-drawers-ox.cyclic.app/recepies/", {
                         id: i._id,
                       })
                       let del = res.filter((item) => i._id !== item._id)
@@ -282,7 +282,7 @@ const Profile = () => {
                         return
                       }
                       update[n][0] = `${e.target.checked}`
-                      await axios.put("http://localhost:3001/", {
+                      await axios.put("https://friendly-drawers-ox.cyclic.app/", {
                         uid: getcooki("uid"),
                         social_media: update,
                       })
@@ -309,7 +309,7 @@ const Profile = () => {
                     }
                     update[n][0] = true
                     update[n][1] = val
-                    await axios.put("http://localhost:3001/", {
+                    await axios.put("https://friendly-drawers-ox.cyclic.app/", {
                       uid: getcooki("uid"),
                       social_media: update,
                     })
