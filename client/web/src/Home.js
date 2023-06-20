@@ -40,9 +40,9 @@ const Home = () => {
   const signup = async (e) => {
     let plink
     if (log === false) {
-      plink = "http://localhost:3001/register"
+      plink = "https://friendly-drawers-ox.cyclic.app/register"
     } else {
-      plink = "http://localhost:3001/login"
+      plink = "https://friendly-drawers-ox.cyclic.app/login"
     }
     e.preventDefault()
     let temp = await axios.post(plink, {
