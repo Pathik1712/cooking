@@ -210,9 +210,11 @@
 @media (max-width: 630px) {
   .profile {
     grid-template-columns: auto;
-    grid-template-rows: 30rem 1fr;
+    grid-template-rows: 32rem 1fr;
   }
   .recepies > h1 {
+    margin-left: 2rem;
+    margin-top: 0.7rem;
     border: none;
     text-decoration: underline 3px solid dodgerblue;
   }
