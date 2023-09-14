@@ -13,7 +13,7 @@ const Profile = () => {
     const d = async () => {
       try {
         let temp = await axios.post(
-          "https://friendly-drawers-ox.cyclic.app/recepies/user",
+          "https://rich-lime-reindeer-fez.cyclic.cloud/recepies/user",
           {
             uid: getcooki("uid"),
           },
