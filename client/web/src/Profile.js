@@ -36,7 +36,6 @@ const Profile = () => {
   for (let i in temp) {
     update.push([temp[i][0], temp[i][1]])
   }
-
   return (
     <main className='profile'>
       <div className='recepies'>

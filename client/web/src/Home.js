@@ -60,6 +60,7 @@ const Home = () => {
         new Date().getTime() + 2 * 24 * 60 * 60 * 1000
       )}`
       window.localStorage.setItem("media", JSON.stringify(temp.data.media))
+      setmedia(window.localStorage.getItem("media"))
       setsign(true)
     }
   }
