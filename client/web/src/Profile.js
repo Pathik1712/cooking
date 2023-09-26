@@ -75,7 +75,7 @@ const Profile = () => {
                     onClick={async (e) => {
                       e.target.disabled = true
                       await axios.delete(
-                        "https://friendly-drawers-ox.cyclic.app/recepies/",
+                        "https://rich-lime-reindeer-fez.cyclic.cloud/recepies/",
                         {
                           id: i._id,
                         }
@@ -288,7 +288,7 @@ const Profile = () => {
                         }
                         update[n][0] = `${e.target.checked}`
                         await axios.put(
-                          "https://friendly-drawers-ox.cyclic.app/",
+                          "https://rich-lime-reindeer-fez.cyclic.cloud/",
                           {
                             uid: getcooki("uid"),
                             social_media: update,
@@ -320,10 +320,13 @@ const Profile = () => {
                       }
                       update[n][0] = true
                       update[n][1] = val
-                      await axios.put("https://localhost:3001/", {
-                        uid: getcooki("uid"),
-                        social_media: update,
-                      })
+                      await axios.put(
+                        "https://rich-lime-reindeer-fez.cyclic.cloud/",
+                        {
+                          uid: getcooki("uid"),
+                          social_media: update,
+                        }
+                      )
                       document.getElementById(i).checked = true
                       let t = {
                         insta: update[0],
