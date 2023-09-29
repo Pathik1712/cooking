@@ -40,9 +40,9 @@ const Home = () => {
   const signup = async (e) => {
     let plink
     if (log === false) {
-      plink = "https://rich-lime-reindeer-fez.cyclic.cloud/register"
+      plink = "https://cooking-api-2vp9.onrender.com/register"
     } else {
-      plink = "https://rich-lime-reindeer-fez.cyclic.cloud/login"
+      plink = "https://cooking-api-2vp9.onrender.com/login"
     }
     e.preventDefault()
     let temp = await axios.post(plink, {

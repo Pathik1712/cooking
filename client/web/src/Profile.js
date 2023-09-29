@@ -13,7 +13,7 @@ const Profile = () => {
     const d = async () => {
       try {
         let temp = await axios.post(
-          "https://rich-lime-reindeer-fez.cyclic.cloud/recepies/user",
+          "https://cooking-api-2vp9.onrender.com/recepies/user",
           {
             uid: getcooki("uid"),
           },
@@ -74,7 +74,7 @@ const Profile = () => {
                     onClick={async (e) => {
                       e.target.disabled = true
                       await axios.delete(
-                        "https://rich-lime-reindeer-fez.cyclic.cloud/recepies/",
+                        "https://cooking-api-2vp9.onrender.com/recepies/",
                         {
                           id: i._id,
                         }
@@ -287,7 +287,7 @@ const Profile = () => {
                         }
                         update[n][0] = `${e.target.checked}`
                         await axios.put(
-                          "https://rich-lime-reindeer-fez.cyclic.cloud/",
+                          "https://cooking-api-2vp9.onrender.com/",
                           {
                             uid: getcooki("uid"),
                             social_media: update,
@@ -320,7 +320,7 @@ const Profile = () => {
                       update[n][0] = true
                       update[n][1] = val
                       await axios.put(
-                        "https://rich-lime-reindeer-fez.cyclic.cloud/",
+                        "https://cooking-api-2vp9.onrender.com/",
                         {
                           uid: getcooki("uid"),
                           social_media: update,

@@ -41,9 +41,13 @@ const Add = () => {
       owner: getcooki("uid"),
       social_media: dataq,
     }
-    await axios.post("https://rich-lime-reindeer-fez.cyclic.cloud/recepies/add", method, {
-      headers: { auth: getcooki("token") },
-    })
+    await axios.post(
+      "https://cooking-api-2vp9.onrender.com/recepies/add",
+      method,
+      {
+        headers: { auth: getcooki("token") },
+      }
+    )
     let t = [...rec_obj, method]
     setrec(t)
     loc("/recepies")
