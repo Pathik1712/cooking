@@ -14,7 +14,7 @@ router
     }
     res.end()
   })
-  .delete(async (req, res) => {
+  .post(async (req, res) => {
     const { id } = req.body
     await recepiesmodel.findByIdAndDelete(id)
     res.end()
