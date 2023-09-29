@@ -129,19 +129,6 @@ const Recepie = () => {
             </Link>
           </div>
         ))}
-        <div className='r-banner anm'>
-          <div className='img_h'>
-            <img
-              src={mk}
-              alt='there'
-            />
-          </div>
-          <article>
-            <h1>malai kofta</h1>
-            <p>laboriosam tempore deserunt beatae et nulla earum error</p>
-          </article>
-          <button>see more</button>
-        </div>
       </div>
     </main>
   )
