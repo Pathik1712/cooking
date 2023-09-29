@@ -73,7 +73,7 @@ const Profile = () => {
                     style={{ cursor: "pointer" }}
                     onClick={async (e) => {
                       e.target.disabled = true
-                      await axios.delete(
+                      await axios.post(
                         "https://cooking-api-2vp9.onrender.com/recepies/",
                         {
                           id: i._id,
